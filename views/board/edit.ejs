@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<%- include('../head', {title: "Edit Board Member"}) %>
+
+	</head>
+	<body>
+		<%- include('../navbar', {}) %>
+
+		<!-- Content -->
+		<div class="paper">
+			<!-- Form -->
+			<div id="wrapper">
+				<div class="container-fluid">
+					<div id="bumper"></div>
+					<h1 class="Club_name">Edit Board Member</h1>
+					<hr class="title-divider">
+					<div class="row">
+						<div class="col-sm-12 profile">
+							<center>
+                                <div id="mc_embed_signup">
+                                    <form action="" method="post" id="mc-embedded-subscribe-form" enctype="multipart/form-data" name="mc-embedded-subscribe-form">
+                                        <div id="mc_embed_signup_scroll">
+                                            <div class="mc-field-group">
+                                                    <label>Image </label>
+                                                    <input type="file" name="icon">
+                                            </div>
+                                            <div class="mc-field-group">
+                                                <label>Email Address</label>
+                                                <input type="email" value="<%= record.email %>" name="email" required>
+                                            </div>
+                                            <div class="mc-field-group">
+                                                <label>Name </label>
+                                                <input type="text" value="<%= record.name %>" name="name" required>
+                                            </div>
+                                            <div class="mc-field-group">
+                                                <label>Position </label>
+                                                <input type="text" value="<%= record.position %>" name="position" required>
+                                            </div>
+                                            <div class="mc-field-group">
+                                                <label>Bio </label>
+                                                <textarea class="form" name="bio" required><%= record.bio %></textarea>
+                                            </div>
+                                            <button class="form">New!</button>
+                                        </div>
+                                    </form>
+                                </div>
+							</center>
+						</div>
+					</div>
+					<br>
+					<br>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="/js/navbar.js"></script>
+	</body>
+</html>

@@ -1,0 +1,5 @@
+- Permissions on requests need checking
+- New, Edit, and Delete need icons
+- Delete needs to remove uploaded files from database
+- 404 and 500 error pages
+- Enable Favicon

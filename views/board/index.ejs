@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<%- include('../head', {title: "Board"}) %>
+	</head>
+	<body>
+		<%- include('../navbar', {}) %>
+
+		<div class="paper">
+			<div id="wrapper">
+				<!-- ACM Board -->
+				<div class="container-fluid">
+					<div id="bumper"></div>
+					<h1 class="Club_name">ACM Board</h1>
+					<% if(session.admin) { %>
+						<a href="/board/new">New</a>
+					<% } %>
+					<hr class="title-divider">
+					<% acm.forEach(function(member, i) { %>
+						<% if(i % 3 === 0) { %>
+							<div class="row">
+						<% } %>
+						<div class="col-sm-4 profile">
+							<center><img src="<%= member.icon %>" class="img-circle prof-pic" style="height:250px"></center>
+							<p class="prof-title">
+								<i><b><%= member.position %></b>
+								<br />
+								<a class="email-link" href="mailto:<%= member.email %>"><%= member.name %></a></i>
+							</p>
+							<hr class="prof-line" />
+							<div class="prof-bio center"><%= member.bio %></div>
+							<% if(session.admin) { %>
+								<a href="/board/<%= member.id %>/edit">Edit</a>
+								<a href="/board/<%= member.id %>/delete">Delete</a>
+							<% } %>
+							<br />
+							<br />
+						</div>
+						<% if(i % 3 === 2 || i === acm.length - 1) { %>
+							</div>
+						<% } %>
+					<% }); %>
+				</div>
+
+				<!-- ACM-W Board -->
+				<div class="container-fluid">
+					<div id="bumper"></div>
+					<h1 class="Club_name">ACM-W Board</h1>
+					<hr class="title-divider">
+
+					<% acmw.forEach(function(member, i) { %>
+						<% if(i % 3 === 0) { %>
+							<div class="row">
+						<% } %>
+						<div class="col-sm-4 profile">
+							<center><img src="<%= member.icon %>" class="img-circle prof-pic" style="height:250px"></center>
+							<p class="prof-title">
+								<i><b><%= member.position %></b>
+								<br />
+								<a class="email-link" href="mailto:<%= member.email %>"><%= member.name %></a></i>
+							</p>
+							<hr class="prof-line" />
+							<div class="prof-bio center"><%= member.bio %></div>
+							<% if(session.admin) { %>
+								<a href="/board/<%= member.id %>/edit">Edit</a>
+								<a href="/board/<%= member.id %>/delete">Delete</a>
+							<% } %>
+							<br />
+							<br />
+						</div>
+						<% if(i % 3 === 2 || i === acmw.length - 1) { %>
+							</div>
+						<% } %>
+					<% }); %>
+				</div>
+
+
+				<!-- Chapter Advisor -->
+				<div class="container-fluid">
+					<div id="bumper"></div>
+					<h1 class="Club_name">Chapter Advisor</h1>
+					<hr class="title-divider">
+
+					<% advise.forEach(function(member, i) { %>
+						<% if(i % 3 === 0) { %>
+							<div class="row">
+						<% } %>
+						<div class="col-sm-4 profile">
+							<center><img src="<%= member.icon %>" class="img-circle prof-pic" style="height:250px"></center>
+							<p class="prof-title">
+								<i><b><%= member.position %></b>
+								<br />
+								<a class="email-link" href="mailto:<%= member.email %>"><%= member.name %></a></i>
+							</p>
+							<hr class="prof-line" />
+							<div class="prof-bio center"><%= member.bio %></div>
+							<% if(session.admin) { %>
+								<a href="/board/<%= member.id %>/edit">Edit</a>
+								<a href="/board/<%= member.id %>/delete">Delete</a>
+							<% } %>
+							<br />
+							<br />
+						</div>
+						<% if(i % 3 === 2 || i === advise.length - 1) { %>
+							</div>
+						<% } %>
+					<% }); %>
+				</div>
+
+			</div>
+		</div>
+
+		<script type="text/javascript" src="/js/navbar.js"></script>
+	</body>
+</html>
